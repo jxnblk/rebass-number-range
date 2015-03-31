@@ -3,7 +3,7 @@
 
 React number/range input combo component
 
-http://jxnblk.com/rebass-number-range/demo
+http://jxnblk.com/rebass-number-range
 
 ```jsx
 <NumberRange

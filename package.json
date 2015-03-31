@@ -5,7 +5,8 @@
   "scripts": {
     "jsx": "jsx -x jsx src .",
     "watch:jsx": "jsx -x jsx -w src .",
-    "dev": "webpack-dev-server --progress --colors --content-base demo/",
+    "dev": "webpack-dev-server --progress --colors",
+    "prod": "webpack -p --progress --colors",
     "start": "npm run watch:jsx & npm run dev"
   },
   "author": "Brent Jackson",
