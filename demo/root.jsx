@@ -29,8 +29,8 @@ var Root = React.createClass({
           {' · '}
           Hotdogs: {this.state.hotdogs}
         </h2>
-        <div className="flex mxn2">
-          <div className="col-12 sm-col-5 px2">
+        <div className="flex flex-wrap mxn2">
+          <div className="col-12 sm-col-5 px2 mb3">
             <NumberRange
               id="hamburgers-number-range"
               label="Hamburgers"
@@ -38,13 +38,32 @@ var Root = React.createClass({
               onValueChange={this.handleHamburgerChange} />
           </div>
           <div className="flex-auto" />
-          <div className="col-12 sm-col-5 px2">
+          <div className="col-12 sm-col-5 px2 mb3">
+            <NumberRange
+              id="hamburgers-with-labels"
+              label="Hamburgers (with range labels)"
+              value={this.state.hamburgers}
+              rangeLabels
+              onValueChange={this.handleHamburgerChange} />
+          </div>
+          <div className="col-12 sm-col-5 px2 mb3">
             <NumberRange
               id="hotdogs-number-range"
-              label="Hotdogs (step 5, max 500)"
+              label="Hotdogs (step 5, max 50)"
               step={5}
-              max={500}
+              max={50}
               value={this.state.hotdogs}
+              onValueChange={this.handleHotdogChange} />
+          </div>
+          <div className="flex-auto" />
+          <div className="col-12 sm-col-5 px2 mb3">
+            <NumberRange
+              id="hotdogs-number-range-disabled"
+              label="Hotdogs (disabled)"
+              step={5}
+              max={50}
+              value={this.state.hotdogs}
+              disabled
               onValueChange={this.handleHotdogChange} />
           </div>
         </div>

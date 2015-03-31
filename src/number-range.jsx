@@ -12,6 +12,7 @@ var NumberRange = React.createClass({
     step: React.PropTypes.number,
     min: React.PropTypes.number,
     max: React.PropTypes.number,
+    rangeLabels: React.PropTypes.bool,
     color: React.PropTypes.string,
   },
 
@@ -36,9 +37,20 @@ var NumberRange = React.createClass({
       numberInput: {
         border: 0,
         backgroundColor: 'transparent',
-        padding: 0
+        padding: 0,
+        height: '1.5rem',
+      },
+      range: {
+        opacity: this.props.disabled ? 0.5 : 1
       }
     };
+    var rangeLabels = this.props.rangeLabels ? (
+        <div className="h6 flex flex-baseline">
+          <div>{this.props.min || 0}</div>
+          <div className="flex-auto" />
+          <div>{this.props.max || 100}</div>
+        </div>
+    ) : false;
     return (
       <div className={this.props.className}>
         <div className="flex flex-baseline">
@@ -64,8 +76,13 @@ var NumberRange = React.createClass({
           min={this.props.min}
           max={this.props.max}
           step={this.props.step}
-          className="full-width range-light"
+          disabled={this.props.disabled}
+          required={this.props.required}
+          readOnly={this.props.readOnly}
+          className="full-width m0 range-light"
+          style={styles.range}
           />
+        {rangeLabels}
       </div>
     )
   }
