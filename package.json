@@ -2,6 +2,7 @@
   "name": "rebass-number-range",
   "version": "1.0.0",
   "description": "React number/range input combo component",
+  "main": "number-range.js",
   "scripts": {
     "jsx": "jsx -x jsx src .",
     "watch:jsx": "jsx -x jsx -w src .",
